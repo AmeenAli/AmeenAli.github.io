@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ameen Ali — researcher working on deep learning, interpretability, and sequence models. PhD candidate at Tel Aviv University.">
+<title>Ameen Ali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">Ameen Ali</a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>Ameen Ali</h1>
+    <p class="sub">
+      I work on deep learning — mostly on understanding how models arrive at their predictions.
+      Currently co-founder &amp; AI lead at a stealth startup, and completing a PhD in computer science
+      at Tel Aviv University.
+    </p>
+    <div class="links">
+      <a href="mailto:ameenali@mail.tau.ac.il">Email</a>
+      <a href="https://scholar.google.com/citations?user=p6C3GgoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ameenali-7232589a" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/AmeenAli" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="about" class="prose">
+    <h2>Research Focus</h2>
+    <p class="focus">Understanding multimodal intelligence</p>
+    <p>
+      My research centers on multimodal foundation models — vision–language, vision–language–action,
+      and video models — and on the interpretability needed to understand and improve them. I study
+      how these models ground language in perception and action, how they represent and reason about
+      the visual world over time, and how their internal mechanisms can be exposed, explained, and
+      edited. My work advances this agenda through two technical programs:
+      <em>understanding</em> — faithful attribution and unified views of the computations inside
+      transformers, state-space models, and their multimodal hybrids; and <em>intervention</em> —
+      mechanism-level editing of models, from neuron pruning to representation filtering, that makes
+      them more truthful, more general, and faster to decode.
+    </p>
+    <p>
+      I did my PhD at Tel Aviv University with Prof. Lior Wolf, with research visits to
+      the University of Edinburgh (with Ivan Titov) and TU Berlin (with Klaus-Robert Müller's group),
+      supported by a Google PhD Fellowship.
+    </p>
+    <p>
+      Before that, I was a research scientist at Google working on video understanding, and spent
+      several years applying computer vision in industry — from aquaculture to medical genetics.
+    </p>
+  </section>
+
+  <section id="publications">
+    <h2>Selected publications</h2>
+
+    <div class="vfilter">
+      <button class="vbtn active" data-venue="All">All</button>
+      <button class="vbtn" data-venue="NeurIPS" style="--vc:#6366f1">NeurIPS</button>
+      <button class="vbtn" data-venue="CoLM" style="--vc:#0ea5e9">CoLM</button>
+      <button class="vbtn" data-venue="ACL" style="--vc:#e0442e">ACL</button>
+      <button class="vbtn" data-venue="ICLR" style="--vc:#0d9668">ICLR</button>
+      <button class="vbtn" data-venue="ICML" style="--vc:#8b5cf6">ICML</button>
+      <button class="vbtn" data-venue="EACL" style="--vc:#e88a1a">EACL</button>
+      <button class="vbtn" data-venue="AAAI" style="--vc:#db2777">AAAI</button>
+      <button class="vbtn" data-venue="WACV" style="--vc:#0d9488">WACV</button>
+      <button class="vbtn" data-venue="ACML" style="--vc:#b0850b">ACML</button>
+      <button class="vbtn" data-venue="CLeaR" style="--vc:#65a30d">CLeaR</button>
+      <button class="vbtn" data-venue="SCIA" style="--vc:#64748b">SCIA</button>
+      <button class="vbtn" data-venue="Preprint" style="--vc:#a16207">Preprint</button>
+    </div>
+
+    <div class="publist">
+
+    <div class="pub">
+      <div class="t">Mitigating Copy Bias in In-Context Learning through Neuron Pruning</div>
+      <div class="a"><strong>Ameen Ali</strong>, Lior Wolf, Ivan Titov</div>
+      <div class="v"><span class="venue">Findings of EACL 2026</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2410.01288" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Large language models (LLMs) have demonstrated impressive few-shot in-context learning (ICL) abilities. Still, we show that they are sometimes prone to a 'copying bias', where they copy answers from provided examples instead of learning the underlying patterns. In this work, we propose a novel and simple method to mitigate such copying bias. First, we create a synthetic task and use the Integrated Gradients method to identify neurons that prioritize copying over generalization. We demonstrate that pruning these neurons consistently improves performance across a diverse set of ICL tasks. We also show that our method is applicable across various LLM architectures, including Transformers and State-Space Models, without requiring modifications. In our analysis, we adopt a task-recognition perspective on ICL and examine task vectors induced by the model. We find that pruning enhances the quality of these vectors, suggesting that the pruned neurons previously hindered effective task recognition.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Wiener Representation Filtering for VLM Hallucination Suppression</div>
+      <div class="a"><strong>Ameen Ali</strong>, Tarek Zoabi, Lior Brami, Lior Wolf</div>
+      <div class="v"><span class="venue">CoLM 2026</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2608.08167" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Vision-language models (VLMs) excel at open-ended captioning and visual QA but often describe objects, attributes, or relations absent from the image, a phenomenon known as object hallucination. We propose a training-free, post-hoc representation editing technique that operates in the representation space of the language backbone. The method performs a lightweight, one-time offline calibration on a modest paired dataset to estimate the required covariance structures, using only forward passes and empirical second-order statistics with no gradient updates or fine-tuning, after which the correction is absorbed directly into the model's existing weights. By modeling hidden states as a superposition of truthful and hallucination-associated components, we derive a Wiener-type estimator whose optimal gains are given in closed form from the covariances of paired truthful and hallucinated representations. An eigendecomposition yields mode-wise attenuation that respects a stability criterion, i.e., the filter responds continuously to estimation noise. The correction is applied once to the feed-forward output projections of selected deeper layers; at inference time, the model runs unchanged and at the same speed. Experiments on LLaVA-1.5, MiniGPT-4, Gemma3, and mPLUG-Owl2 demonstrate consistent reductions in object hallucination on CHAIR, POPE, and MME while maintaining caption fluency and overall response quality. We further demonstrate the generality of our approach on the TempCompass video understanding benchmark and on discrete diffusion language models for grounded dialogue.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Dependency-Guided Parallel Decoding in Discrete Diffusion Language Models</div>
+      <div class="a">Liran Ringel, <strong>Ameen Ali</strong>, Yaniv Romano</div>
+      <div class="v"><span class="venue">NeurIPS 2026</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2604.02560" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Discrete diffusion language models (dLLMs) accelerate text generation by unmasking multiple tokens in parallel. However, parallel decoding introduces a distributional mismatch: it approximates the joint conditional using a fully factorized product of per-token marginals, which degrades output quality when selected tokens are strongly dependent. We propose DEMASK (DEpendency-guided unMASKing), a lightweight dependency predictor that attaches to the final hidden states of a dLLM. In a single forward pass, it estimates pairwise conditional influences between masked positions. Using these predictions, a greedy selection algorithm identifies positions with bounded cumulative dependency for simultaneous unmasking. Under a sub-additivity assumption, we prove this bounds the total variation distance between our parallel sampling and the model's joint. Empirically, DEMASK achieves 1.7–2.2× speedup on Dream-7B while matching or improving accuracy compared to confidence-based and KL-based baselines.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Mean-Field Parallel Decoding for Discrete Diffusion Language Models</div>
+      <div class="a">Tarek Zoabi, <strong>Ameen Ali</strong>, Liran Ringel, Lior Wolf</div>
+      <div class="v"><span class="venue">NeurIPS 2026</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2606.15805" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Discrete diffusion language models enable parallel token generation, offering a pathway to low-latency decoding. However, selecting tokens independently by marginal confidence limits effective parallelism: tokens that appear reliable in isolation can form incompatible configurations when several positions are updated at once. We introduce a training-free decoding framework that coordinates these parallel updates. At each forward pass, the method assigns a commit score to each masked position and refines these scores using pairwise interactions derived from the model's predictive distributions. A variational relaxation yields a simple fixed-point update that suppresses conflicting simultaneous commitments within a single forward pass. This mechanism allows the decoder to commit more tokens in parallel while maintaining competitive generation quality. The method is lightweight, requires no auxiliary model or retraining, and drops into existing diffusion decoding pipelines without modification. Experiments on reasoning and code-generation benchmarks show consistent improvements in the quality-latency trade-off.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Detecting and Pruning Prominent but Detrimental Neurons in Large Language Models</div>
+      <div class="a"><strong>Ameen Ali</strong>, Shahar Katz, Lior Wolf, Ivan Titov</div>
+      <div class="v"><span class="venue">CoLM 2025</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2507.09185" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Large language models (LLMs) often develop learned mechanisms specialized to specific datasets, such as reliance on domain-specific correlations, which yield high-confidence predictions without generalizable reasoning. While beneficial in one setting, these dataset-specific mechanisms typically degrade performance when models encounter novel tasks or distributions. In this work, we introduce a fine-tuning approach designed to enhance generalization by identifying and pruning neurons associated with dataset-specific mechanisms in transformer-based LLMs. Our method employs Integrated Gradients to quantify each neuron's influence on high-confidence predictions, pinpointing those that disproportionately contribute to dataset-specific performance without supporting robust, transferable reasoning. Selectively pruning these neurons compels the model to depend on generalizable representations. Evaluated across multiple-choice benchmarks, our pruning-based fine-tuning significantly enhances performance, surpassing prior (non-pruning) adaptation methods.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">The Hidden Attention of Mamba Models</div>
+      <div class="a"><strong>Ameen Ali</strong>, Itamar Zimerman, Lior Wolf</div>
+      <div class="v"><span class="venue">ACL 2025</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2403.01590" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/AmeenAli/HiddenMambaAttn" target="_blank" rel="noopener">code</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>The Mamba layer offers an efficient selective state space model (SSM) that is highly effective in modeling multiple domains, including NLP, long-range sequence processing, and computer vision. Selective SSMs are viewed as dual models, in which one trains in parallel on the entire sequence via an IO-aware parallel scan, and deploys in an autoregressive manner. We add a third view and show that such models can be viewed as attention-driven models. This new perspective enables us to empirically and theoretically compare the underlying mechanisms to that of the self-attention layers in transformers and allows us to peer inside the inner workings of the Mamba model with explainability methods. Our code is publicly available.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Explaining Modern Gated-Linear RNNs via a Unified Implicit Attention Formulation</div>
+      <div class="a">Itamar Zimerman, <strong>Ameen Ali</strong>, Lior Wolf</div>
+      <div class="v"><span class="venue">ICLR 2025</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2405.16504" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Recent advances in efficient sequence modeling have led to attention-free layers, such as Mamba, RWKV, and various gated RNNs, all featuring sub-quadratic complexity in sequence length and excellent scaling properties, enabling the construction of a new type of foundation models. In this paper, we present a unified view of these models, formulating such layers as implicit causal self-attention layers. The formulation includes most of their sub-components and is not limited to a specific part of the architecture. The framework compares the underlying mechanisms on similar grounds for different layers and provides a direct means for applying explainability methods. Our experiments show that our attention matrices and attribution method outperform an alternative and a more limited formulation that was recently proposed for Mamba. For the other architectures for which our method is the first to provide such a view, our method is effective and competitive in the relevant metrics compared to the results obtained by state-of-the-art Transformer explainability methods. Our code is publicly available.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Suppressing VLM Hallucinations with Spectral Representation Filtering</div>
+      <div class="a"><strong>Ameen Ali</strong>, Tarek Zoabi, Lior Wolf</div>
+      <div class="v"><span class="venue">arXiv preprint, 2025</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2511.12220" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Vision-language models (VLMs) frequently produce hallucinations in the form of descriptions of objects, attributes, or relations that do not exist in the image due to over-reliance on language priors and imprecise cross-modal grounding. We introduce Spectral Representation Filtering (SRF), a lightweight, training-free method to suppress such hallucinations by analyzing and correcting the covariance structure of the model's representations. SRF identifies low-rank hallucination modes through eigendecomposition of the covariance of the differences between features collected for truthful and hallucinatory captions, revealing structured biases in the feature space. A soft spectral filter then attenuates these modes in the feed-forward projection weights of deeper vLLM layers, equalizing feature variance while preserving semantic fidelity. Unlike decoding or retraining-based approaches, SRF operates entirely post-hoc, incurs zero inference overhead, and requires no architectural modifications. Across three families of VLMs (LLaVA-1.5, MiniGPT-4, and mPLUG-Owl2), SRF consistently reduces hallucination rates on MSCOCO, POPE-VQA, and other visual tasks benchmarks, achieving state-of-the-art faithfulness without degrading caption quality.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Centered Self-Attention Layers</div>
+      <div class="a"><strong>Ameen Ali</strong>, Tomer Galanti, Lior Wolf</div>
+      <div class="v"><span class="venue">SCIA 2025</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2306.01610" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>The self-attention mechanism in transformers and the message-passing mechanism in graph neural networks are repeatedly applied within deep learning architectures. We show that this application inevitably leads to oversmoothing, i.e., to similar representations at the deeper layers for different tokens in transformers and different nodes in graph neural networks. Based on our analysis, we present a correction term to the aggregating operator of these mechanisms. Empirically, this simple term eliminates much of the oversmoothing problem in visual transformers, obtaining performance in weakly supervised segmentation that surpasses elaborate baseline methods that introduce multiple auxiliary networks and training phases. In graph neural networks, the correction term enables the training of very deep architectures more effectively than many recent solutions to the same problem.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Degree-Based Stratification of Nodes in Graph Neural Networks</div>
+      <div class="a"><strong>Ameen Ali</strong>, Lior Wolf, Hakan Cevikalp</div>
+      <div class="v"><span class="venue">ACML 2024</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2312.10458" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Despite much research, Graph Neural Networks (GNNs) still do not display the favorable scaling properties of other deep neural networks such as Convolutional Neural Networks and Transformers. Previous work has identified issues such as oversmoothing of the latent representation and have suggested solutions such as skip connections and sophisticated normalization schemes. Here, we propose a different approach that is based on a stratification of the graph nodes. We provide motivation that the nodes in a graph can be stratified into those with a low degree and those with a high degree and that the two groups are likely to behave differently. Based on this motivation, we modify the Graph Neural Network (GNN) architecture so that the weight matrices are learned, separately, for the nodes in each group. This simple-to-implement modification seems to improve performance across datasets and GNN methods. To verify that this increase in performance is not only due to the added capacity, we also perform the same modification for random splits of the nodes, which does not lead to any improvement.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">XAI for Transformers: Better Explanations through Conservative Propagation</div>
+      <div class="a"><strong>Ameen Ali</strong>, Thomas Schnake, Oliver Eberle, Grégoire Montavon, Klaus-Robert Müller, Lior Wolf</div>
+      <div class="v"><span class="venue">ICML 2022</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2202.07304" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Transformers have become an important workhorse of machine learning, with numerous applications. This necessitates the development of reliable methods for increasing their transparency. Multiple interpretability methods, often based on gradient information, have been proposed. We show that the gradient in a Transformer reflects the function only locally, and thus fails to reliably identify the contribution of input features to the prediction. We identify Attention Heads and LayerNorm as main reasons for such unreliable explanations and propose a more stable way for propagation through these layers. Our proposal, which can be seen as a proper extension of the well-established LRP method to Transformers, is shown both theoretically and empirically to overcome the deficiency of a simple gradient-based approach, and achieves state-of-the-art explanation performance on a broad range of Transformer models and datasets.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Video and Text Matching with Conditioned Embeddings</div>
+      <div class="a"><strong>Ameen Ali</strong>, Idan Schwartz, Tamir Hazan, Lior Wolf</div>
+      <div class="v"><span class="venue">WACV 2022</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2110.11298" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/AmeenAli/VideoMatch" target="_blank" rel="noopener">code</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>We present a method for matching a text sentence from a given corpus to a given video clip and vice versa. Traditionally video and text matching is done by learning a shared embedding space and the encoding of one modality is independent of the other. In this work, we encode the dataset data in a way that takes into account the query's relevant information. The power of the method is demonstrated to arise from pooling the interaction data between words and frames. Since the encoding of the video clip depends on the sentence compared to it, the representation needs to be recomputed for each potential match. To this end, we propose an efficient shallow neural network. Its training employs a hierarchical triplet loss that is extendable to paragraph/video matching. The method is simple, provides explainability, and achieves state-of-the-art results for both sentence-clip and video-text by a sizable margin across five different datasets: ActivityNet, DiDeMo, YouCook2, MSR-VTT, and LSMDC. We also show that our conditioned representation can be transferred to video-guided machine translation, where we improved the current results on VATEX.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Weakly Supervised Discovery of Semantic Attributes</div>
+      <div class="a"><strong>Ameen Ali</strong>, Tomer Galanti, Evgenii Zheltonozhskii, Chaim Baskin, Lior Wolf</div>
+      <div class="v"><span class="venue">CLeaR 2022</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2103.11888" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>We consider the problem of the extraction of semantic attributes, supervised only with classification labels. For example, when learning to classify images of birds into species, we would like to observe the emergence of features that zoologists use to classify birds. To tackle this problem, we propose training a neural network with discrete features in the last layer, which is followed by two heads: a multi-layered perceptron (MLP) and a decision tree. Since decision trees utilize simple binary decision stumps we expect those discrete features to obtain semantic meaning. We present a theoretical analysis as well as a practical method for learning in the intersection of two hypothesis classes. Our results on multiple benchmarks show an improved ability to extract a set of features that are highly correlated with the set of unseen attributes.</p>
+      </details>
+    </div>
+
+    <div class="pub">
+      <div class="t">Visualization of Supervised and Self-Supervised Neural Networks via Attribution Guided Factorization</div>
+      <div class="a">Shir Gur, <strong>Ameen Ali</strong>, Lior Wolf</div>
+      <div class="v"><span class="venue">AAAI 2021</span></div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2012.02166" target="_blank" rel="noopener">arXiv</a></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Neural network visualization techniques mark image locations by their relevancy to the network's classification. Existing methods are effective in highlighting the regions that affect the resulting classification the most. However, as we show, these methods are limited in their ability to identify the support for alternative classifications, an effect we name the saliency bias hypothesis. In this work, we integrate two lines of research: gradient-based methods and attribution-based methods, and develop an algorithm that provides per-class explainability. The algorithm back-projects the per pixel local influence, in a manner that is guided by the local attributions, while correcting for salient features that would otherwise bias the explanation. In an extensive battery of experiments, we demonstrate the ability of our methods to class-specific visualization, and not just the predicted label. Remarkably, the method obtains state of the art results in benchmarks that are commonly applied to gradient-based methods as well as in those that are employed mostly for evaluating attribution methods. Using a new unsupervised procedure, our method is also successful in demonstrating that self-supervised methods learn semantic information.</p>
+      </details>
+    </div>
+
+    </div>
+
+    <p style="font-size: 0.88rem; color: var(--muted); margin-top: 14px;">
+      Full list on <a href="https://scholar.google.com/citations?user=p6C3GgoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="row"><span><span class="role">Co-Founder &amp; AI Lead</span> · <span class="org">Stealth</span></span><span class="dates">2026 – present</span></div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">Research Scientist</span> · <span class="org">Google</span></span><span class="dates">2025 – 2026</span></div>
+      <div class="desc">Video understanding.</div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">AI Researcher</span> · <span class="org">Seed-X</span></span><span class="dates">2024 – 2025</span></div>
+      <div class="desc">Deep learning on physiological patterns in seeds — genetic traits linked to germination potential and disease resistance.</div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">AI Researcher</span> · <span class="org">FDNA</span></span><span class="dates">2023 – 2025</span></div>
+      <div class="desc">Deep learning to detect physiological patterns revealing disease-causing genetic variations.</div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">AI Researcher</span> · <span class="org">Ruby.AI Robotic Technologies</span></span><span class="dates">2024</span></div>
+      <div class="desc">Robotics and computer vision.</div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">Senior AI Researcher</span> · <span class="org">Aquaticode</span></span><span class="dates">2022 – 2024</span></div>
+      <div class="desc">Computer vision for aquaculture.</div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="row"><span><span class="role">PhD, Computer Science</span> · <span class="org">Tel Aviv University</span></span><span class="dates">2022 – 2026</span></div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">Visiting PhD Scholar</span> · <span class="org">The University of Edinburgh</span></span><span class="dates">2024</span></div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">Visiting PhD Scholar</span> · <span class="org">Technische Universität Berlin</span></span><span class="dates">2021 – 2022</span></div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">MSc, Computer Science</span> · <span class="org">Tel Aviv University</span></span><span class="dates">2020 – 2021</span></div>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="role">BSc, Software Engineering</span> · <span class="org">Technion</span></span><span class="dates">2016 – 2019</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="container inner">
+    <span>ameenali@mail.tau.ac.il</span>
+    <span>
+      <a href="https://scholar.google.com/citations?user=p6C3GgoAAAAJ&amp;hl=en">Scholar</a> ·
+      <a href="https://github.com/AmeenAli">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/ameenali-7232589a">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var list = document.querySelector('.publist');
+  var pubs = Array.prototype.slice.call(list.querySelectorAll('.pub'));
+  pubs.forEach(function (p, i) { p.dataset.idx = i; });
+
+  function matches(pub, venue) {
+    var text = pub.querySelector('.venue').textContent;
+    if (venue === 'Preprint') return /preprint/i.test(text);
+    return new RegExp('\\b' + venue + '\\b').test(text);
+  }
+
+  document.querySelectorAll('.vbtn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.vbtn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var venue = btn.dataset.venue;
+      var sorted = pubs.slice().sort(function (a, b) {
+        if (venue !== 'All') {
+          var am = matches(a, venue), bm = matches(b, venue);
+          if (am !== bm) return am ? -1 : 1;
+        }
+        return a.dataset.idx - b.dataset.idx;
+      });
+      sorted.forEach(function (p) {
+        p.classList.toggle('vmatch', venue !== 'All' && matches(p, venue));
+        list.appendChild(p);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
