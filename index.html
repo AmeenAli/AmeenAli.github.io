@@ -95,6 +95,16 @@
     <div class="publist">
 
     <div class="pub">
+      <div class="t">Hamiltonian JEPA: Action-Conditioned World Models with an Inherited Control State</div>
+      <div class="a">Tamim Zoabi, <strong>Ameen Ali</strong>, Lior Wolf</div>
+      <div class="v"><span class="venue">Preprint</span></div>
+      <details class="abs">
+        <summary>Abstract</summary>
+        <p>Planning from pixels needs more than a latent space that is stable and predictable. The state the planner scores must also be organized by how actions move the system. Joint-embedding predictive architectures (JEPAs) avoid pixel reconstruction by predicting future representations, but existing action-conditioned JEPAs ask one embedding to serve both perception and control. We introduce H-JEPA, which separates the two. A wide perceptual code is regularized toward a well-scaled isotropic geometry with a Bures-Wasserstein prior, and a fixed orthonormal slice of that code is the control state, which inherits the code's covariance without any objective of its own. The state evolves under phase-conditioned dissipative port-Hamiltonian dynamics whose input port has orthonormal columns. Port-inverse consistency (PIC) reads the executed action back through the transpose of that port. We show that this readout is exactly the rollout error projected onto the port directions, so PIC is a parameter-free reweighting of prediction error and not an auxiliary action decoder. Untying the readout from the port breaks this identity and loses half of the gain. H-JEPA matches or exceeds reconstruction-free baselines, including the action-decoding Delta-JEPA, on four pixel-based control benchmarks after at most 10 training epochs, and its largest gain is on OGB-Cube (91.9 against 79.3 percent). Ablations on PushT and OGB-Cube separate the contributions of the structured predictor, PIC, the prediction horizon, the state rank, and the anti-collapse prior.</p>
+      </details>
+    </div>
+
+    <div class="pub">
       <div class="t">Mitigating Copy Bias in In-Context Learning through Neuron Pruning</div>
       <div class="a"><strong>Ameen Ali</strong>, Lior Wolf, Ivan Titov</div>
       <div class="v"><span class="venue">Findings of EACL 2026</span></div>
